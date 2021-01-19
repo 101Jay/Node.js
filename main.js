@@ -30,6 +30,12 @@ var app = http.createServer(function(request,response){
 		author.index(request,response);
 	}else if(pathname === '/author/create_process'){
 		author.create_process(request,response);
+	}else if(pathname === '/author/update'){
+		author.index(request,response,queryData.id);
+	}else if(pathname === '/author/update_process'){
+		author.update_process(request,response);
+	}else if(pathname === '/author/delete_process'){
+		author.delete_process(request,response,queryData.id);
 	}else
 	{
       response.writeHead(404);
