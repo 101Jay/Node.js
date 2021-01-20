@@ -1,3 +1,5 @@
+//보안 - 1. sql injection => ;; 
+//2. 입력 값을 출력할 때 생기는 문제( <script>
 var http = require('http');
 var url = require('url');
 var qs = require('querystring');
@@ -35,7 +37,7 @@ var app = http.createServer(function(request,response){
 	}else if(pathname === '/author/update_process'){
 		author.update_process(request,response);
 	}else if(pathname === '/author/delete_process'){
-		author.delete_process(request,response,queryData.id);
+		author.delete_process(request,response);
 	}else
 	{
       response.writeHead(404);
